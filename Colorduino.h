@@ -274,6 +274,8 @@ public:
 
 	//-----------------------------------------------------------------------------
 	void SetPixel(unsigned char x, unsigned char y, unsigned char r, unsigned char g, unsigned char b) {
+		if(x > 7 || y > 7 || x < 0 || y < 0)
+			return;
 	// set a pixel in the offscreen frame buffer
 		ColorRGB *p = GetPixel(x,y);
 		p->r = r;
